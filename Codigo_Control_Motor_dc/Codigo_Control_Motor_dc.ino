@@ -1,5 +1,5 @@
 const int enablePin = 9;  //PWM
-const int velocidad_baja = 80; // Valor PWM de 0 a 255
+const int velocidad_baja = 90; // Valor PWM de 0 a 255
 
 void setup() {
   pinMode(enablePin, OUTPUT);
