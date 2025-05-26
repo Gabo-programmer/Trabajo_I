@@ -1,20 +1,16 @@
-const int motorPin = 9;
-const int velocidad_baja = 80;  // Debe coincidir con código 1
-const int velocidad_max = 255;
+const int enablePin = 9;  // PWM para controlar velocidad
+const int in1 = 8;
+const int in2 = 7;
 
 void setup() {
-  pinMode(motorPin, OUTPUT);
-
-  // Aumenta desde la velocidad baja hasta la máxima
-  for (int pwm = velocidad_baja; pwm <= velocidad_max; pwm += 5) {
-    analogWrite(motorPin, pwm);
-    delay(100);
-  }
-
-  // Mantiene velocidad máxima constante
-  analogWrite(motorPin, velocidad_max);
+  pinMode(enablePin, OUTPUT);
+  pinMode(in1, OUTPUT);
+  pinMode(in2, OUTPUT);
 }
 
 void loop() {
-  // Mantener velocidad máxima indefinidamente
+  // Giro horario
+  digitalWrite(in1, LOW);
+  digitalWrite(in2, HIGH);
+  analogWrite(enablePin, 255); // Velocidad máxima
 }
